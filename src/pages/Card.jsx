@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import profile from "../assets/profile.png";
 import Popup from "./Popup";
+import { IoIosCall } from "react-icons/io";
+import { IoLocationSharp } from "react-icons/io5";
 
 const Card = ({ user }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -15,20 +17,27 @@ const Card = ({ user }) => {
   };
 
   return (
-    <div className="m-8 bg-white p-8 rounded-lg shadow-lg">
-      <img src={profile} className="h-20 w-auto rounded-full" />
-      <p className="text-3xl font-semibold mt-2">
+    <div className="m-2 bg-white p-4 rounded-lg shadow-lg">
+      <img src={profile} className="h-16 w-auto rounded-full" />
+      <p className="text-2xl font-semibold mt-2">
         {user.first_name} {user.last_name}
       </p>
-      <p className="text-sm">{user.city}</p>
-      <div className="flex mt-8 border-t-2 border-black justify-between">
-        <div className="text-sm pt-2 mt-1">
-          <p>{user.contact_number}</p>
-          <p>Available on Phone</p>
+      <div className="flex justify-start items-center text-sm">
+        <IoLocationSharp className="text-base" />
+        <p>{user.city}</p>
+      </div>
+
+      <div className="flex mt-6 border-t-2 border-black justify-between">
+        <div className="text-xs pt-1 mt-1">
+          <div className="flex justify-start items-center text-sm">
+            <IoIosCall className="text-base" />
+            <p>{user.contact_number}</p>
+          </div>
+          <p className="text-xs">Available on Phone</p>
         </div>
         <button
           onClick={handleFetchClick}
-          className="p-3 mt-2 bg-black text-white rounded-lg"
+          className="pr-3 pl-3 mt-2 bg-black text-white rounded-lg text-sm"
         >
           Fetch Details
         </button>

@@ -14,7 +14,7 @@ import profile from "../assets/profile.png";
 const Popup = ({ user, onClose }) => {
   return (
     <Dialog open={true} onOpenChange={onClose}>
-      <DialogContent className="w-1/3 p-8 bg-white rounded-lg shadow-lg">
+      <DialogContent className="w-1/3 p-8 bg-white rounded-lg shadow-lg [&>button]:hidden">
         <DialogHeader>
           <DialogTitle>
             <p className="text-2xl">Fetch Details</p>
@@ -31,11 +31,11 @@ const Popup = ({ user, onClose }) => {
           <p>Location: {user.city}</p>
           <p>Phone: {user.contact_number}</p>
           <p className="mt-2 mb-2">Profile Image:</p>
-          <img src={profile} className="h-32 w-auto mb-4" />
+          <img src={profile} className="h-32 w-auto" />
         </div>
 
         <DialogFooter>
-          <DialogClose className="p-2 pr-3 pl-3 border bg-white rounded-lg">
+          <DialogClose className="p-1 pr-3 pl-3 border bg-white rounded-lg">
             Close
           </DialogClose>
         </DialogFooter>

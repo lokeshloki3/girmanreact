@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import homelogo from "../assets/home_icon.png";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import { IoSearchOutline } from "react-icons/io5";
 
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
@@ -20,18 +21,21 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-gradient-to-b from-white to-sky-200 h-[100vh] flex flex-col gap-8">
+      <div className="bg-gradient-to-b from-white to-sky-200 h-screen overflow-y-hidden flex flex-col gap-8 mt-20">
         <div className="flex justify-center items-center gap-4">
           <img src={homelogo} className="h-40 w-auto" />
           <p className="text-9xl font-semibold text-center">Girman</p>
         </div>
-        <input
-          placeholder="Search"
-          className="w-[50%] mx-auto p-3 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition duration-200"
-          value={inputValue}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-        />
+        <div className="flex items-center w-[50%] mx-auto bg-white rounded-lg border border-blue-800 ">
+          <IoSearchOutline className="text-3xl pl-2"/>
+          <input
+            placeholder="Search"
+            className="p-3 rounded-lg w-full focus:outline-none"
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+          />
+        </div>
       </div>
     </>
   );

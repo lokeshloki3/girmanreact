@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import notfound from "../assets/notfound.png";
 import logo from "../assets/logo.svg";
 import loadingGif from "../assets/loading.gif";
+import { IoSearchOutline } from "react-icons/io5";
 
 const Cards = () => {
   const [data, setData] = useState([]);
@@ -49,40 +50,49 @@ const Cards = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-white to-sky-200 min-h-screen">
-      <div className="flex justify-between shadow-lg p-4 mb-4 pl-52 pr-52">
+    <>
+      <div className="flex justify-between shadow-lg p-4 pl-52 pr-52 fixed top-0 left-0 w-full z-50 bg-white">
         <img src={logo} alt="Logo" onClick={() => navigate("/")} />
-        <input
-          placeholder="Search"
-          className="w-[50%] p-3 rounded-lg border-2 border-gray-300 focus:border-blue-500"
-          value={inputValue}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-        />
-      </div>
-      {loading ? (
-        <div className="fixed inset-0 flex justify-center items-center bg-slate-200 bg-opacity-50 z-50">
-          <img src={loadingGif} alt="Loading..." className="w-16 h-16" />
+        <div className="flex items-center justify-start bg-white rounded-lg border border-blue-800 w-[50%]">
+          <IoSearchOutline className="text-3xl pl-2 pr-0" />
+          <input
+            placeholder="Search"
+            className="p-2 mx-auto w-full rounded-lg focus:outline-none"
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+          />
         </div>
-      ) : (
-        <>
-          {filteredData.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
-              {filteredData.map((user, index) => (
-                <Card key={index} user={user} />
-              ))}
-            </div>
-          ) : (
-            <div className="flex flex-col justify-center items-center mt-28">
-              <img src={notfound} className="h-56 w-auto" />
-              <p className="text-center text-lg text-gray-400">
-                No results found for "{searchQuery}"
-              </p>
-            </div>
-          )}
-        </>
-      )}
-    </div>
+      </div>
+
+      <div className="relative bg-gradient-to-b from-white to-sky-200 min-h-screen mt-20">
+        {loading ? (
+          <div className="absolute inset-0 flex justify-center items-center bg-slate-200 bg-opacity-50 z-50">
+            <img src={loadingGif} alt="Loading..." className="w-16 h-16" />
+          </div>
+        ) : (
+          <>
+            {filteredData.length > 0 ? (
+              <div
+                id="cards-space"
+                className="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 p-6"
+              >
+                {filteredData.map((user, index) => (
+                  <Card key={index} user={user} />
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-col justify-center items-center mt-28">
+                <img src={notfound} className="h-56 w-auto" />
+                <p className="text-center text-lg text-gray-400">
+                  No results found for "{searchQuery}"
+                </p>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
