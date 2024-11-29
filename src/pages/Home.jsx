@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import homelogo from "../assets/home_icon.png";
-import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
+import Navbar from "@/components/Navbar";
 
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-gradient-to-b from-white to-sky-200 h-screen overflow-y-hidden flex flex-col gap-8 mt-20">
+      <div className="flex justify-center items-center bg-gradient-to-b from-white to-sky-200 flex-col gap-8 h-dvh">
         <div className="flex justify-center items-center gap-4">
           <img src={homelogo} className="h-40 w-auto" />
           <p className="text-9xl font-semibold text-center">Girman</p>

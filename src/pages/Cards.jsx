@@ -51,30 +51,30 @@ const Cards = () => {
 
   return (
     <>
-      <div className="flex justify-between shadow-lg p-4 pl-52 pr-52 fixed top-0 left-0 w-full z-50 bg-white">
-        <img src={logo} alt="Logo" onClick={() => navigate("/")} />
-        <div className="flex items-center justify-start bg-white rounded-lg border border-blue-800 w-[50%]">
-          <IoSearchOutline className="text-3xl pl-2 pr-0" />
-          <input
-            placeholder="Search"
-            className="p-2 mx-auto w-full rounded-lg focus:outline-none"
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyDown}
-          />
+      <div className="fixed top-0 left-0 w-full z-50">
+        <div className="flex justify-between shadow-lg p-4 pl-52 pr-52 bg-white">
+          <img src={logo} alt="Logo" onClick={() => navigate("/")} />
+          <div className="flex items-center justify-start bg-white rounded-lg border border-blue-800 w-[50%]">
+            <IoSearchOutline className="text-3xl pl-2 pr-0" />
+            <input
+              placeholder="Search"
+              className="p-2 mx-auto w-full rounded-lg focus:outline-none"
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+            />
+          </div>
         </div>
       </div>
-
-      <div className="relative bg-gradient-to-b from-white to-sky-200 min-h-screen mt-20">
+      <div className="relative bg-gradient-to-b from-white to-sky-200 min-h-screen pt-20">
         {loading ? (
-          <div className="absolute inset-0 flex justify-center items-center bg-slate-200 bg-opacity-50 z-50">
+          <div className="absolute inset-0 flex justify-center items-center bg-slate-200 bg-opacity-50 z-40">
             <img src={loadingGif} alt="Loading..." className="w-16 h-16" />
           </div>
         ) : (
           <>
             {filteredData.length > 0 ? (
               <div
-                id="cards-space"
                 className="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 p-6"
               >
                 {filteredData.map((user, index) => (
