@@ -7,6 +7,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/girmanreact" element={<Home />} />
         <Route path="/cards" element={<Cards />} />
       </Routes>
     </div>
