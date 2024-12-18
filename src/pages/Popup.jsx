@@ -36,7 +36,7 @@ const Popup = ({ user, onClose }) => {
 
         <DialogFooter>
           <DialogClose className="p-1 pr-3 pl-3 border bg-white rounded-lg">
-            Close
+            
           </DialogClose>
         </DialogFooter>
       </DialogContent>
