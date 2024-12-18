@@ -28,7 +28,7 @@ const Popup = ({ user, onClose }) => {
           <p>
             Name: {user.first_name} {user.last_name}
           </p>
-          <p>Location: {user.city}</p>
+          {/* <p>Location: {user.city}</p> */}
           <p>Phone: {user.contact_number}</p>
           <p className="mt-2 mb-2">Profile Image:</p>
           <img src={profile} className="h-32 w-auto" />
