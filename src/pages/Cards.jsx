@@ -85,7 +85,7 @@ const Cards = () => {
               <div className="flex flex-col justify-center items-center mt-28">
                 <img src={notfound} className="h-56 w-auto" />
                 <p className="text-center text-lg text-gray-400">
-                  No results found for "{searchQuery}"
+                   "{searchQuery}"
                 </p>
               </div>
             )}
