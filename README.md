@@ -1,8 +1,16 @@
-# React + Vite
+**Demo Site:** https://lokeshloki3.github.io/girmanreact/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Requirements:**
+- A search box that retrieves data from a Mock API.
+- A loader should be displayed while data is being fetched.
+- Display information for all matching names.
+- A popup using Shadcn Dialog that appears under the Navbar.
+- The option to search directly from the Navbar in the "Show Info" section.
+- If no users are found, display an image/logo with the message "No user found."
 
-Currently, two official plugins are available:
+**Improvements:**
+- Data can be fetched from the Backend API instead of the Mock API.
+- The UI can be easily optimized for mobile view with minimal adjustments.
+- Searching for a person can be done directly in the input field by making an API call to the backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+npm run dev
