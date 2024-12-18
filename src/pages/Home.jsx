@@ -27,7 +27,7 @@ const Home = () => {
           <p className="text-9xl font-semibold text-center">Girman</p>
         </div>
         <div className="flex items-center w-[50%] mx-auto bg-white rounded-lg border border-blue-800 ">
-          {/* <IoSearchOutline className="text-3xl pl-2"/> */}
+          <IoSearchOutline className="text-3xl pl-2"/>
           <input
             placeholder="Search"
             className="p-3 rounded-lg w-full focus:outline-none"
