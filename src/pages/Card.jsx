@@ -33,7 +33,7 @@ const Card = ({ user }) => {
             <IoIosCall className="text-base" />
             <p>{user.contact_number}</p>
           </div>
-          <p className="text-xs"></p>
+          <p className="text-xs">Available on Phone</p>
         </div>
         <button
           onClick={handleFetchClick}
