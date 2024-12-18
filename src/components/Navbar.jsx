@@ -7,7 +7,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="fixed w-full bg-white shadow-lg z-10">
+    <div className=" w-full bg-white shadow-lg z-10">
       <div className="flex justify-around shadow-lg p-4">
         <img src={logo} alt="GirmanTech Logo" onClick={()=>navigate("/")}/>
         <div className="flex gap-4 justify-center items-center">
