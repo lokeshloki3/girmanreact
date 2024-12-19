@@ -20,7 +20,7 @@ const Popup = ({ user, onClose }) => {
             <p className="text-2xl">Fetch Details</p>
           </DialogTitle>
           <DialogDescription>
-            Here are the details for the following employee, Fill it in the popup:
+            Here are the details for the following employee:
           </DialogDescription>
         </DialogHeader>
 
